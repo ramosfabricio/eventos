@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Festa Julina 🎉</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #fefefe;
+    }
+    h1 {
+      color: #e05d26;
+    }
+    button {
+      padding: 15px 30px;
+      background-color: #e05d26;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c94d1f;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Festa Julina 🎉</h1>
+  <p>Convide seus amigos para curtir essa noite cheia de música, comida típica e diversão!</p>
+
+  <button onclick="compartilhar()">Compartilhar Evento</button>
+
+  <script>
+    function compartilhar() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Festa Julina 🎉',
+          text: 'Vem curtir a Festa Julina comigo! 🍿🎶🌽',
+          url: 'https://bit.ly/evento123'
+        })
+        .then(() => console.log('Compartilhado com sucesso!'))
+        .catch((error) => console.log('Erro ao compartilhar:', error));
+      } else {
+        alert('O compartilhamento não é suportado neste navegador.');
+      }
+    }
+  </script>
+
+</body>
+</html>
